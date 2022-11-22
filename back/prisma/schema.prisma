@@ -1,0 +1,17 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Car {
+  id     String  @id @default(cuid())
+  year   Int
+  name   String
+  brand  String
+  model  String
+  image  String
+}
